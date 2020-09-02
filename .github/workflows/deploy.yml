@@ -28,4 +28,4 @@ jobs:
         run: mvn -B deploy -Dgpg.skip
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
-          MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_PASSWORD }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
