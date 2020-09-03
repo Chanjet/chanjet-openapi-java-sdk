@@ -11,7 +11,7 @@
 推荐通过Maven来管理项目依赖，您只需在项目的`pom.xml`文件中声明如下依赖
 ```xml
 <dependency>
-    <groupId>com.chanjet.openapi.sdk</groupId>
+    <groupId>com.chanjet</groupId>
     <artifactId>chanjet-openapi-java-sdk</artifactId>
     <version>1.0.0-RELEASE</version>
 </dependency>
