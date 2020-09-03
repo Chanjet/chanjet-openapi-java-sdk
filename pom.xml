@@ -6,7 +6,8 @@
 
     <groupId>com.chanjet</groupId>
     <artifactId>chanjet-openapi-java-sdk</artifactId>
-    <version>0.0.3-RELEASE</version>
+    <version>0.0.9-RELEASE</version>
+    <name>chanjet-openapi-java-sdk</name>
     <url>https://dev.chanjet.com</url>
     <description>
         Chanjet openapi SDK for Java
@@ -24,11 +25,11 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>snapshots</id>
+            <id>sonatype-oss</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>releases</id>
+            <id>sonatype-oss</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
@@ -41,7 +42,7 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:alipay/alipay-sdk-java-all.git</connection>
+        <connection>scm:git:git@github.com:Chanjet/chanjet-openapi-java-sdk.git</connection>
         <developerConnection>scm:git:ssh://github.com:Chanjet/chanjet-openapi-java-sdk.git</developerConnection>
         <url>https://github.com/Chanjet/chanjet-openapi-java-sdk/tree/master</url>
     </scm>
@@ -49,7 +50,8 @@
     <developers>
         <developer>
             <id>chanjet</id>
-            <name>chanjet</name>
+            <name>chanjetsdp</name>
+            <email>chanjetsdp@chanjet.com</email>
         </developer>
     </developers>
 
