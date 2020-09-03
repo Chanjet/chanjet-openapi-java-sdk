@@ -36,11 +36,11 @@ public class SdkTest {
             createTenantRequest.setAppKey("zMqBZ...");
             createTenantRequest.setAppSecret("5DB7FB61... ...");
             createTenantRequest.setRequestUri("/financial/orgAndUser/createTenant");
-
-            //设置query参数,接口无query参数则不需要传
+            
+            //设置header参数,接口如无appKey、appSecret、appSecret、Content-Type四个参数之外的请求头，则不需要传
             createTenantRequest.addHeader("key", "value");
 
-            //设置header参数,接口如无appKey、appSecret、appSecret、Content-Type四个参数之外的请求头，则不需要传
+            //设置query参数,接口无query参数则不需要传
             createTenantRequest.addQueryParam("key", "value");
 
             //设置业务参数对象
