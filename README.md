@@ -27,7 +27,7 @@ public class SdkTest {
     public static void main(String[] args) {
         try {
             //创建client
-            DefaultChanjetClient defaultChanjetClient = new DefaultChanjetClient("https://inte-openapi.chanjet.com");
+            DefaultChanjetClient defaultChanjetClient = new DefaultChanjetClient("https://openapi.chanjet.com");
 
             //创建请求对象
             CreateTenantRequest createTenantRequest = new CreateTenantRequest();
