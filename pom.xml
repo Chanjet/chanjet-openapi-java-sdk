@@ -6,7 +6,7 @@
 
     <groupId>com.chanjet</groupId>
     <artifactId>chanjet-openapi-java-sdk</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.1-RELEASE</version>
     <name>chanjet-openapi-java-sdk</name>
     <url>https://dev.chanjet.com</url>
     <description>
