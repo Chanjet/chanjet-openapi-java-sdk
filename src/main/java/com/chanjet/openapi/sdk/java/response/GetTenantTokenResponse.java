@@ -5,9 +5,10 @@ import com.chanjet.openapi.sdk.java.common.ErrorInfo;
 import lombok.*;
 
 /**
- * 获取租户token
- * @author: zsc
- * @create: 2020/8/24 4:20 下午
+ * 集成模块模式，获取租户token响应
+ *
+ * @author zsc
+ * @create 2020/8/24 4:20 下午
  **/
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

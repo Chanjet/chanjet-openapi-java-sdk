@@ -5,8 +5,8 @@ import lombok.*;
 
 /**
  * 获取用户token
- * @author: zsc
- * @create: 2020/8/24 4:20 下午
+ * @author zsc
+ * @create 2020/8/24 4:20 下午
  **/
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

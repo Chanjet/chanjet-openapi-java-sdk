@@ -5,9 +5,10 @@ import com.chanjet.openapi.sdk.java.enums.HttpMethod;
 import com.chanjet.openapi.sdk.java.response.RefreshTokenResponse;
 
 /**
- * 刷新token
- * @author: zsc
- * @create: 2020/8/24 5:45 下午
+ * 刷新token请求
+ *
+ * @author zsc
+ * @create 2020/8/24 5:45 下午
  **/
 public class RefreshTokenRequest extends AbstractChanjetRequest<RefreshTokenResponse> {
     @Override

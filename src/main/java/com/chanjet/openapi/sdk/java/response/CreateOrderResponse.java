@@ -5,9 +5,10 @@ import com.chanjet.openapi.sdk.java.common.ErrorInfo;
 import lombok.*;
 
 /**
- * 代客下单
- * @author: zsc
- * @create: 2020/8/24 4:00 下午
+ * 集成模块模式，代客下单响应
+ *
+ * @author zsc
+ * @create 2020/8/24 4:00 下午
  **/
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

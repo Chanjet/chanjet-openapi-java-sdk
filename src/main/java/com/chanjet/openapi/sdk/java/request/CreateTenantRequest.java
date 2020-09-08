@@ -5,9 +5,10 @@ import com.chanjet.openapi.sdk.java.enums.HttpMethod;
 import com.chanjet.openapi.sdk.java.response.CreateTenantResponse;
 
 /**
- * 创建租户
- * @author: zsc
- * @create: 2020/8/21 1:41 下午
+ * 集成模块模式，创建租户请求
+ *
+ * @author zsc
+ * @create 2020/8/21 1:41 下午
  **/
 public class CreateTenantRequest extends AbstractChanjetRequest<CreateTenantResponse> {
     @Override

@@ -1,8 +1,8 @@
 package com.chanjet.openapi.sdk.java.exception;
 
 /**
- * @author: zsc
- * @create: 2020/7/31 1:20 下午
+ * @author zsc
+ * @create 2020/7/31 1:20 下午
  **/
 public class ChanjetApiException extends Exception{
     private static final long serialVersionUID = -238091758285157331L;

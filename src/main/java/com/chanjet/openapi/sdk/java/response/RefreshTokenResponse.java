@@ -5,9 +5,10 @@ import com.google.gson.annotations.SerializedName;
 import lombok.*;
 
 /**
- * 刷新token
- * @author: zsc
- * @create: 2020/8/24 5:46 下午
+ * 刷新token响应
+ *
+ * @author zsc
+ * @create 2020/8/24 5:46 下午
  **/
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
@@ -16,10 +17,17 @@ import lombok.*;
 @Data
 public class RefreshTokenResponse extends AbstractChanjetResponse {
     private static final long serialVersionUID = -3670472011629372150L;
+    /**
+     * 错误码，200为成功，其余均为失败，详情参考开放平台接口错误码类表
+     */
     private String code;
-
+    /**
+     * 错误响应信息
+     */
     private String message;
-
+    /**
+     * 响应结果
+     */
     private Result result;
 
     @Data

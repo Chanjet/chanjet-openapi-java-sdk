@@ -5,16 +5,17 @@ import com.chanjet.openapi.sdk.java.common.ErrorInfo;
 import lombok.*;
 
 /**
- * 创建租户
- * @author: zsc
- * @create: 2020/8/24 3:50 下午
+ * 集成模块模式，创建租户响应
+ *
+ * @author zsc
+ * @create 2020/8/24 3:50 下午
  **/
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
-public class CreateTenantResponse  extends AbstractChanjetResponse {
+public class CreateTenantResponse extends AbstractChanjetResponse {
     private static final long serialVersionUID = 662789967780058545L;
     /**
      * 判断是否成功

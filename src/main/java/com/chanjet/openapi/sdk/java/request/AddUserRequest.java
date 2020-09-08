@@ -5,9 +5,10 @@ import com.chanjet.openapi.sdk.java.enums.HttpMethod;
 import com.chanjet.openapi.sdk.java.response.AddUserResponse;
 
 /**
- * 企业内添加用户
- * @author: zsc
- * @create: 2020/8/24 4:16 下午
+ * 集成模块模式，企业内添加用户请求
+ *
+ * @author zsc
+ * @create 2020/8/24 4:16 下午
  **/
 public class AddUserRequest extends AbstractChanjetRequest<AddUserResponse> {
     @Override

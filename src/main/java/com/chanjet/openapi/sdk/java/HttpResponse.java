@@ -3,8 +3,8 @@ package com.chanjet.openapi.sdk.java;
 import java.util.Map;
 
 /**
- * @author: zsc
- * @create: 2020/7/31 3:26 下午
+ * @author zsc
+ * @create 2020/7/31 3:26 下午
  **/
 public class HttpResponse {
     private int statusCode;

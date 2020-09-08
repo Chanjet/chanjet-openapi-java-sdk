@@ -2,8 +2,8 @@ package com.chanjet.openapi.sdk.java;
 
 /**
  * 默认畅捷通开放平台API调用客户端
- * @author: zsc
- * @create: 2020/7/31 4:52 下午
+ * @author zsc
+ * @create 2020/7/31 4:52 下午
  **/
 public class DefaultChanjetClient extends AbstractChanjetClient {
     public DefaultChanjetClient(String serverUrl) {

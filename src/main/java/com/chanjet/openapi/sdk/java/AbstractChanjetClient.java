@@ -10,8 +10,8 @@ import java.io.IOException;
 /**
  * 畅捷通开放平台客户端抽象
  *
- * @author: zsc
- * @create: 2020/7/31 1:24 下午
+ * @author zsc
+ * @create 2020/7/31 1:24 下午
  **/
 public abstract class AbstractChanjetClient implements ChanjetClient {
     /**

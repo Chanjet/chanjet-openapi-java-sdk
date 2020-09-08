@@ -6,8 +6,9 @@ import com.chanjet.openapi.sdk.java.response.GetLoginUrlResponse;
 
 /**
  * 获取单点登录地址
- * @author: zsc
- * @create: 2020/8/24 5:11 下午
+ *
+ * @author zsc
+ * @create 2020/8/24 5:11 下午
  **/
 public class GetLoginUrlRequest extends AbstractChanjetRequest<GetLoginUrlResponse> {
     @Override

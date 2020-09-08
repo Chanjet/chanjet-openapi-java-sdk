@@ -5,8 +5,8 @@ import lombok.*;
 
 /**
  * 代客下单
- * @author: zsc
- * @create: 2020/8/24 4:05 下午
+ * @author zsc
+ * @create 2020/8/24 4:05 下午
  **/
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

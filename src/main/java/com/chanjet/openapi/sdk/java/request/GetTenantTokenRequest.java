@@ -5,9 +5,10 @@ import com.chanjet.openapi.sdk.java.enums.HttpMethod;
 import com.chanjet.openapi.sdk.java.response.GetTenantTokenResponse;
 
 /**
- * 获取租户token
- * @author: zsc
- * @create: 2020/8/24 4:19 下午
+ * 集成模块模式，获取租户token请求
+ *
+ * @author zsc
+ * @create 2020/8/24 4:19 下午
  **/
 public class GetTenantTokenRequest extends AbstractChanjetRequest<GetTenantTokenResponse> {
     @Override

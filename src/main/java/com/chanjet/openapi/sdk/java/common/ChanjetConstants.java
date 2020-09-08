@@ -1,8 +1,8 @@
 package com.chanjet.openapi.sdk.java.common;
 
 /**
- * @author: zsc
- * @create: 2020/7/31 1:06 下午
+ * @author zsc
+ * @create 2020/7/31 1:06 下午
  **/
 public class ChanjetConstants {
     private ChanjetConstants() {

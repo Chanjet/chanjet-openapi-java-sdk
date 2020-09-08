@@ -5,8 +5,8 @@ import lombok.*;
 
 /**
  * 获取租户token
- * @author: zsc
- * @create: 2020/8/24 4:19 下午
+ * @author zsc
+ * @create 2020/8/24 4:19 下午
  **/
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

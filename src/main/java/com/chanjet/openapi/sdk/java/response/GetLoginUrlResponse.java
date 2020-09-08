@@ -5,9 +5,10 @@ import com.chanjet.openapi.sdk.java.common.ErrorInfo;
 import lombok.*;
 
 /**
- * 获取单点登录地址
- * @author: zsc
- * @create: 2020/8/24 5:11 下午
+ * 获取单点登录地址响应
+ *
+ * @author zsc
+ * @create 2020/8/24 5:11 下午
  **/
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor

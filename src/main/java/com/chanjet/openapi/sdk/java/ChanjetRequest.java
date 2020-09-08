@@ -5,8 +5,8 @@ import com.chanjet.openapi.sdk.java.enums.HttpMethod;
 import java.util.Map;
 
 /**
- * @author: zsc
- * @create: 2020/7/30 5:10 下午
+ * @author zsc
+ * @create 2020/7/30 5:10 下午
  **/
 public interface ChanjetRequest<T extends ChanjetResponse> {
     /**

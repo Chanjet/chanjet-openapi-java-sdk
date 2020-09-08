@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author: zsc
- * @create: 2020/7/31 10:40 上午
+ * @author zsc
+ * @create 2020/7/31 10:40 上午
  **/
 public abstract class AbstractChanjetRequest<T extends ChanjetResponse> implements ChanjetRequest<T> {
 

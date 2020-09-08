@@ -5,9 +5,10 @@ import com.chanjet.openapi.sdk.java.enums.HttpMethod;
 import com.chanjet.openapi.sdk.java.response.CreateOrderResponse;
 
 /**
- * 代客下单
- * @author: zsc
- * @create: 2020/8/24 4:00 下午
+ * 集成模块模式，代客下单请求
+ *
+ * @author zsc
+ * @create 2020/8/24 4:00 下午
  **/
 public class CreateOrderRequest extends AbstractChanjetRequest<CreateOrderResponse> {
     @Override

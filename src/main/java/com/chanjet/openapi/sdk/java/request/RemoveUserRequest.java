@@ -5,9 +5,10 @@ import com.chanjet.openapi.sdk.java.enums.HttpMethod;
 import com.chanjet.openapi.sdk.java.response.RemoveUserResponse;
 
 /**
- * 企业内移除用户
- * @author: zsc
- * @create: 2020/8/24 4:19 下午
+ * 集成模块模式，企业内移除用户请求
+ *
+ * @author zsc
+ * @create 2020/8/24 4:19 下午
  **/
 public class RemoveUserRequest extends AbstractChanjetRequest<RemoveUserResponse> {
     @Override

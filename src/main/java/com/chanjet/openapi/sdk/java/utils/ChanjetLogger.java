@@ -16,8 +16,8 @@ import java.util.TimeZone;
 /**
  * 日志工具类
  *
- * @author: zsc
- * @create: 2020/8/2 11:06 上午
+ * @author zsc
+ * @create 2020/8/2 11:06 上午
  **/
 public class ChanjetLogger {
 
