@@ -5,6 +5,7 @@ import lombok.*;
 
 /**
  * 企业内添加用户
+ *
  * @author zsc
  * @create 2020/8/24 4:16 下午
  **/
@@ -23,4 +24,8 @@ public class AddUserContent extends AbstractChanjetContent {
      * 第三方用户ID
      */
     private String thirdPlatformUserId;
+    /**
+     * 用户名称
+     */
+    private String name;
 }
