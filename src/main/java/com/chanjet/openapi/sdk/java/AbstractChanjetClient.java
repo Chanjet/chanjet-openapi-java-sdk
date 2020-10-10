@@ -30,9 +30,17 @@ public abstract class AbstractChanjetClient implements ChanjetClient {
     private final String serverUrl;
     private final int connectTimeout;
     private final int readTimeout;
+    /**
+     * 加签秘钥
+     */
+    private String signKey;
 
     public AbstractChanjetClient(String serverUrl) {
         this(serverUrl, CONNECT_TIMEOUT, READ_TIMEOUT, KEEP_ALIVE_TIMEOUT);
+    }
+
+    public AbstractChanjetClient(String serverUrl, String signKey) {
+        this(serverUrl, CONNECT_TIMEOUT, READ_TIMEOUT, KEEP_ALIVE_TIMEOUT, signKey);
     }
 
     public AbstractChanjetClient(String serverUrl, int connectTimeout, int readTimeout) {
@@ -43,6 +51,14 @@ public abstract class AbstractChanjetClient implements ChanjetClient {
         this.serverUrl = serverUrl;
         this.connectTimeout = connectTimeout;
         this.readTimeout = readTimeout;
+        HttpUtils.setKeepAliveTimeout(keepAliveTimeout);
+    }
+
+    public AbstractChanjetClient(String serverUrl, int connectTimeout, int readTimeout, int keepAliveTimeout, String signKey) {
+        this.serverUrl = serverUrl;
+        this.connectTimeout = connectTimeout;
+        this.readTimeout = readTimeout;
+        this.signKey = signKey;
         HttpUtils.setKeepAliveTimeout(keepAliveTimeout);
     }
 
@@ -89,25 +105,37 @@ public abstract class AbstractChanjetClient implements ChanjetClient {
         return httpResponse;
     }
 
-    private <T extends ChanjetResponse> HttpResponse doPost(ChanjetRequest<T> request) throws IOException {
+    private <T extends ChanjetResponse> HttpResponse doPost(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
+        sign(request,signKey);
         String body = new Gson().toJson(request.getBizContent());
         return HttpUtils.doPost(this.serverUrl + request.getRequestUri(), request.getHeaders(),
                 request.getQueryParams(), request.getContentType(), body, this.connectTimeout, this.readTimeout, null, 0);
     }
 
-    private <T extends ChanjetResponse> HttpResponse doGet(ChanjetRequest<T> request) throws IOException {
+    private <T extends ChanjetResponse> HttpResponse doGet(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
+        sign(request,signKey);
         return HttpUtils.doGet(this.serverUrl + request.getRequestUri(), request.getHeaders(),
                 request.getQueryParams(), request.getContentType(), this.connectTimeout, this.readTimeout);
     }
 
-    private <T extends ChanjetResponse> HttpResponse doDelete(ChanjetRequest<T> request) throws IOException {
+    private <T extends ChanjetResponse> HttpResponse doDelete(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
+        sign(request,signKey);
         return HttpUtils.doDelete(this.serverUrl + request.getRequestUri(), request.getHeaders(),
                 request.getQueryParams(), request.getContentType(), this.connectTimeout, this.readTimeout);
     }
 
-    private <T extends ChanjetResponse> HttpResponse doPut(ChanjetRequest<T> request) throws IOException {
+    private <T extends ChanjetResponse> HttpResponse doPut(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
+        sign(request,signKey);
         String body = new Gson().toJson(request.getBizContent());
         return HttpUtils.doPut(this.serverUrl + request.getRequestUri(), request.getHeaders(),
                 request.getQueryParams(), request.getContentType(), body, this.connectTimeout, this.readTimeout, null, 0);
     }
+
+    /**
+     * 加签方法
+     *
+     * @param request 请求
+     * @return 返回签名
+     */
+    abstract void sign(ChanjetRequest request, String signKey) throws ChanjetApiException;
 }

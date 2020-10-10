@@ -9,7 +9,6 @@ import java.io.*;
 import java.lang.reflect.Field;
 import java.net.*;
 import java.net.Proxy.Type;
-import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -138,7 +137,7 @@ public class HttpUtils {
         if (StringUtils.isNotBlank(query)) {
             url = url + "?" + query;
         }
-        byte[] content = body.getBytes(StandardCharsets.UTF_8);
+        byte[] content = body.getBytes("UTF-8");
         return doPost(url, headers, contentType, content, connectTimeout, readTimeout, proxyHost, proxyPort);
     }
 
@@ -257,7 +256,7 @@ public class HttpUtils {
         if (StringUtils.isNotBlank(query)) {
             url = url + "?" + query;
         }
-        byte[] content = body.getBytes(StandardCharsets.UTF_8);
+        byte[] content = body.getBytes("UTF-8");
         return doPut(url, headers, contentType, content, connectTimeout, readTimeout, proxyHost, proxyPort);
     }
 
@@ -440,7 +439,7 @@ public class HttpUtils {
                     hasParam = true;
                 }
 
-                query.append(name).append("=").append(URLEncoder.encode(value, StandardCharsets.UTF_8.name()));
+                query.append(name).append("=").append(URLEncoder.encode(value, "UTF-8"));
             }
         }
 
@@ -472,7 +471,7 @@ public class HttpUtils {
     }
 
     private static Map<String, String> getHeader(Map<String, List<String>> headerFields) {
-        Map<String, String> headers = new HashMap<>();
+        Map<String, String> headers = new HashMap<String, String>();
         if (headerFields != null) {
             for (Entry<String, List<String>> headerField : headerFields.entrySet()) {
                 if (StringUtils.isNotBlank(headerField.getKey()) && headerField.getValue() != null && headerField.getValue().size() > 0) {
@@ -531,7 +530,7 @@ public class HttpUtils {
      * @return 参数映射
      */
     public static Map<String, String> splitUrlQuery(String query) {
-        Map<String, String> result = new HashMap<>();
+        Map<String, String> result = new HashMap<String, String>();
 
         String[] pairs = query.split("&");
         if (pairs != null && pairs.length > 0) {

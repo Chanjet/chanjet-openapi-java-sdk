@@ -11,8 +11,8 @@ import java.util.Map;
  **/
 public abstract class AbstractChanjetRequest<T extends ChanjetResponse> implements ChanjetRequest<T> {
 
-    private Map<String, String> queryParams = new HashMap<>();
-    private Map<String, String> headers = new HashMap<>();
+    private Map<String, String> queryParams = new HashMap<String, String>();
+    private Map<String, String> headers = new HashMap<String, String>();
     private String contentType = "application/json";
     private String openToken;
     private String appKey;

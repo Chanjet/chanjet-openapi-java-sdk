@@ -24,4 +24,6 @@ public class ChanjetConstants {
      * SDK版本号
      */
     public static final String SDK_VERSION = "chanjet-sdk-java-dynamicVersionNo";
+    public static final String SIGN_KEY = "signature";
+    public static final String TIMESTAMP_KEY = "timestamp";
 }
