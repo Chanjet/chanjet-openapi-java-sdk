@@ -24,7 +24,7 @@ public class ErrorInfo implements Serializable {
     /**
      * 错误信息
      */
-    private String message;
+    private String msg;
     /**
      * 错误提示信息
      */
