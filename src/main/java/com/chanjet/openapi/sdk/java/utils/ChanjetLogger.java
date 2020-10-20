@@ -5,8 +5,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import java.io.UnsupportedEncodingException;
 import java.net.InetAddress;
-import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -155,7 +155,7 @@ public class ChanjetLogger {
     /**
      * 打印http请求日志
      */
-    public static void logHttpRequest(String httpMethod, String url, Map<String, String> queryParams, Map<String, String> headers, String body) {
+    public static void logHttpRequest(String httpMethod, String url, Map<String, String> queryParams, Map<String, String> headers, String body) throws UnsupportedEncodingException {
         if (!needEnableLogger){
             return;
         }
@@ -179,7 +179,7 @@ public class ChanjetLogger {
             sb.append(body);
             sb.append("\n");
             sb.append("--> END (");
-            sb.append(body.getBytes(StandardCharsets.UTF_8).length);
+            sb.append(body.getBytes("UTF-8").length);
             sb.append("-byte body)\n");
         } else {
             sb.append("--> END (0-byte body)\n");
@@ -191,7 +191,7 @@ public class ChanjetLogger {
     /**
      * 打印http响应日志
      */
-    public static void logHttpResponse(String httpMethod, String url, Map<String, String> queryParams, Map<String, String> headers, String body) {
+    public static void logHttpResponse(String httpMethod, String url, Map<String, String> queryParams, Map<String, String> headers, String body) throws UnsupportedEncodingException {
         if (!needEnableLogger){
             return;
         }
@@ -215,7 +215,7 @@ public class ChanjetLogger {
             sb.append(body);
             sb.append("\n");
             sb.append("<-- END (");
-            sb.append(body.getBytes(StandardCharsets.UTF_8).length);
+            sb.append(body.getBytes("UTF-8").length);
             sb.append("-byte body)\n");
         } else {
             sb.append("<-- END (0-byte body)\n");
