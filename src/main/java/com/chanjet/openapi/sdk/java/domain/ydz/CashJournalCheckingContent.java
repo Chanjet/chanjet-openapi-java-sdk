@@ -18,81 +18,28 @@ import java.math.BigDecimal;
 @Data
 public class CashJournalCheckingContent extends AbstractChanjetContent {
     /**
-     * 参数
+     * 条数
      */
-    private Param param;
+    private Long count;
+    /**
+     * 业务日期
+     */
+    private String bizDate;
+    /**
+     * 收入金额
+     */
+    private BigDecimal receiptAmount;
+    /**
+     * 支出金额
+     */
+    private BigDecimal disbursementAmount;
+    /**
+     * 余额
+     */
+    private BigDecimal balance;
+    /**
+     * 科目ID
+     */
+    private String glAccountId;
 
-    public static class Param {
-        /**
-         * 条数
-         */
-        private Long count;
-        /**
-         * 业务日期
-         */
-        private String bizDate;
-        /**
-         * 收入金额
-         */
-        private BigDecimal receiptAmount;
-        /**
-         * 支出金额
-         */
-        private BigDecimal disbursementAmount;
-        /**
-         * 余额
-         */
-        private BigDecimal balance;
-
-        public Long getCount() {
-            return count;
-        }
-
-        public void setCount(Long count) {
-            this.count = count;
-        }
-
-        public String getBizDate() {
-            return bizDate;
-        }
-
-        public void setBizDate(String bizDate) {
-            this.bizDate = bizDate;
-        }
-
-        public BigDecimal getReceiptAmount() {
-            return receiptAmount;
-        }
-
-        public void setReceiptAmount(BigDecimal receiptAmount) {
-            this.receiptAmount = receiptAmount;
-        }
-
-        public BigDecimal getDisbursementAmount() {
-            return disbursementAmount;
-        }
-
-        public void setDisbursementAmount(BigDecimal disbursementAmount) {
-            this.disbursementAmount = disbursementAmount;
-        }
-
-        public BigDecimal getBalance() {
-            return balance;
-        }
-
-        public void setBalance(BigDecimal balance) {
-            this.balance = balance;
-        }
-
-        @Override
-        public String toString() {
-            return "Param{" +
-                    "count=" + count +
-                    ", bizDate='" + bizDate + '\'' +
-                    ", receiptAmount=" + receiptAmount +
-                    ", disbursementAmount=" + disbursementAmount +
-                    ", balance=" + balance +
-                    '}';
-        }
-    }
 }

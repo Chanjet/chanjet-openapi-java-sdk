@@ -5,6 +5,7 @@ import lombok.*;
 
 /**
  * 日记账对账
+ *
  * @author zsc
  * @create 2020/10/10 11:11 上午
  **/
@@ -14,6 +15,7 @@ import lombok.*;
 @Builder
 @Data
 public class CashJournalCheckingResponse extends AbstractChanjetResponse {
-    private int Code;
-    private String Msg;
+    private String code;
+    private String data;
+    private Boolean successful;
 }

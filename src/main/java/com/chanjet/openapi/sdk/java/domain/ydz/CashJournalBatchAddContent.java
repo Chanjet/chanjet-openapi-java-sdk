@@ -1,28 +1,27 @@
 package com.chanjet.openapi.sdk.java.domain.ydz;
 
-import com.chanjet.openapi.sdk.java.AbstractChanjetContent;
-import lombok.*;
+import com.chanjet.openapi.sdk.java.ChanjetContent;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * 易代账批量新增日记账业务参数
+ *
  * @author zsc
  * @create 2020/10/10 11:18 上午
  **/
 @EqualsAndHashCode(callSuper = true)
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @Data
-public class CashJournalBatchAddContent extends AbstractChanjetContent {
-    /**
-     * 参数
-     */
-    private List<Param> param;
+public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddContent.Param> implements ChanjetContent {
+    private static final long serialVersionUID = 1L;
 
     public static class Param {
+        private static final long serialVersionUID = 1L;
         /**
          * 科目id
          */
@@ -51,6 +50,18 @@ public class CashJournalBatchAddContent extends AbstractChanjetContent {
          * 对方户名
          */
         private String couterpartyAccountName;
+        /**
+         * 日记账收支类型
+         */
+        private String incomeDisbursementCategoryEnum;
+        /**
+         * 现金日记账收支类型ID
+         */
+        private Long incomeDisbursementTypeId;
+        /**
+         * 顺序号
+         */
+        private Integer sequenceNum;
 
         public Long getGlAccountId() {
             return glAccountId;
@@ -108,6 +119,30 @@ public class CashJournalBatchAddContent extends AbstractChanjetContent {
             this.couterpartyAccountName = couterpartyAccountName;
         }
 
+        public String getIncomeDisbursementCategoryEnum() {
+            return incomeDisbursementCategoryEnum;
+        }
+
+        public void setIncomeDisbursementCategoryEnum(String incomeDisbursementCategoryEnum) {
+            this.incomeDisbursementCategoryEnum = incomeDisbursementCategoryEnum;
+        }
+
+        public Long getIncomeDisbursementTypeId() {
+            return incomeDisbursementTypeId;
+        }
+
+        public void setIncomeDisbursementTypeId(Long incomeDisbursementTypeId) {
+            this.incomeDisbursementTypeId = incomeDisbursementTypeId;
+        }
+
+        public Integer getSequenceNum() {
+            return sequenceNum;
+        }
+
+        public void setSequenceNum(Integer sequenceNum) {
+            this.sequenceNum = sequenceNum;
+        }
+
         @Override
         public String toString() {
             return "Param{" +
@@ -118,6 +153,9 @@ public class CashJournalBatchAddContent extends AbstractChanjetContent {
                     ", receiptAmount=" + receiptAmount +
                     ", disbursementAmount=" + disbursementAmount +
                     ", couterpartyAccountName='" + couterpartyAccountName + '\'' +
+                    ", incomeDisbursementCategoryEnum='" + incomeDisbursementCategoryEnum + '\'' +
+                    ", incomeDisbursementTypeId=" + incomeDisbursementTypeId +
+                    ", sequenceNum=" + sequenceNum +
                     '}';
         }
     }
