@@ -51,14 +51,6 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
          */
         private String couterpartyAccountName;
         /**
-         * 日记账收支类型
-         */
-        private String incomeDisbursementCategoryEnum;
-        /**
-         * 现金日记账收支类型ID
-         */
-        private Long incomeDisbursementTypeId;
-        /**
          * 顺序号
          */
         private Integer sequenceNum;
@@ -119,22 +111,6 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
             this.couterpartyAccountName = couterpartyAccountName;
         }
 
-        public String getIncomeDisbursementCategoryEnum() {
-            return incomeDisbursementCategoryEnum;
-        }
-
-        public void setIncomeDisbursementCategoryEnum(String incomeDisbursementCategoryEnum) {
-            this.incomeDisbursementCategoryEnum = incomeDisbursementCategoryEnum;
-        }
-
-        public Long getIncomeDisbursementTypeId() {
-            return incomeDisbursementTypeId;
-        }
-
-        public void setIncomeDisbursementTypeId(Long incomeDisbursementTypeId) {
-            this.incomeDisbursementTypeId = incomeDisbursementTypeId;
-        }
-
         public Integer getSequenceNum() {
             return sequenceNum;
         }
@@ -153,8 +129,6 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
                     ", receiptAmount=" + receiptAmount +
                     ", disbursementAmount=" + disbursementAmount +
                     ", couterpartyAccountName='" + couterpartyAccountName + '\'' +
-                    ", incomeDisbursementCategoryEnum='" + incomeDisbursementCategoryEnum + '\'' +
-                    ", incomeDisbursementTypeId=" + incomeDisbursementTypeId +
                     ", sequenceNum=" + sequenceNum +
                     '}';
         }

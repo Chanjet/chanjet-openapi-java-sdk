@@ -31,11 +31,9 @@ public class CashJournalBatchAddResponse extends AbstractChanjetResponse {
         private String cashJournalSrcEnum;
         private String comments;
         private String couterpartyAccountName;
-        private Long dateType;
         private BigDecimal disbursementAmount;
         private Long finAccountId;
         private Long incomeDisbursementTypeId;
-        private Boolean isBeginning;
         private String lastUpdatedStamp;
         private BigDecimal receiptAmount;
         private Long sequenceNum;
@@ -88,14 +86,6 @@ public class CashJournalBatchAddResponse extends AbstractChanjetResponse {
             this.couterpartyAccountName = couterpartyAccountName;
         }
 
-        public Long getDateType() {
-            return dateType;
-        }
-
-        public void setDateType(Long dateType) {
-            this.dateType = dateType;
-        }
-
         public BigDecimal getDisbursementAmount() {
             return disbursementAmount;
         }
@@ -118,14 +108,6 @@ public class CashJournalBatchAddResponse extends AbstractChanjetResponse {
 
         public void setIncomeDisbursementTypeId(Long incomeDisbursementTypeId) {
             this.incomeDisbursementTypeId = incomeDisbursementTypeId;
-        }
-
-        public Boolean getBeginning() {
-            return isBeginning;
-        }
-
-        public void setBeginning(Boolean beginning) {
-            isBeginning = beginning;
         }
 
         public String getLastUpdatedStamp() {
@@ -161,11 +143,9 @@ public class CashJournalBatchAddResponse extends AbstractChanjetResponse {
                     ", cashJournalSrcEnum='" + cashJournalSrcEnum + '\'' +
                     ", comments='" + comments + '\'' +
                     ", couterpartyAccountName='" + couterpartyAccountName + '\'' +
-                    ", dateType=" + dateType +
                     ", disbursementAmount=" + disbursementAmount +
                     ", finAccountId=" + finAccountId +
                     ", incomeDisbursementTypeId=" + incomeDisbursementTypeId +
-                    ", isBeginning=" + isBeginning +
                     ", lastUpdatedStamp='" + lastUpdatedStamp + '\'' +
                     ", receiptAmount=" + receiptAmount +
                     ", sequenceNum=" + sequenceNum +

@@ -46,14 +46,6 @@ public class CashJournalAddContent extends AbstractChanjetContent {
      */
     private String couterpartyAccountName;
     /**
-     * 日记账收支类型
-     */
-    private String incomeDisbursementCategoryEnum;
-    /**
-     * 现金日记账收支类型ID
-     */
-    private Long incomeDisbursementTypeId;
-    /**
      * 顺序号
      */
     private Integer sequenceNum;
