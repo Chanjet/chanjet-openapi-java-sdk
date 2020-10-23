@@ -1,10 +1,12 @@
 package com.chanjet.openapi.sdk.java.utils;
 
+import com.google.gson.Gson;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -12,7 +14,7 @@ import java.util.TreeMap;
  * @author: zsc
  * @create: 2020/10/10 11:43 上午
  **/
-public class SignUtils {
+public class OldSignUtils {
     /**
      * 对报文进行加签
      *
@@ -25,7 +27,14 @@ public class SignUtils {
     public static String sign(String msg, String appKey, String signKey, String timestamp) throws UnsupportedEncodingException {
         Map<String, Object> map = new HashMap<String, Object>();
         if (StringUtils.isNotBlank(msg)) {
-            map.put("bizContent", msg.replaceAll("\\s*", ""));
+            Object object = new Gson().fromJson(msg, Object.class);
+            if (object instanceof List) {
+                map.put("bizContent", msg.replaceAll("\\s*",""));
+            } else {
+                if (StringUtils.isNotBlank(msg)) {
+                    map = new Gson().fromJson(msg, Map.class);
+                }
+            }
         }
         map.put("timestamp", timestamp);
         map.put("appKey", appKey);
@@ -62,6 +71,7 @@ public class SignUtils {
         if (sb.length() > 0) {
             sb.setLength(sb.length() - 1);
         }
+
         return sb.toString();
     }
 }

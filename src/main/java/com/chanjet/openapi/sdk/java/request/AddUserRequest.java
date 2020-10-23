@@ -20,4 +20,9 @@ public class AddUserRequest extends AbstractChanjetRequest<AddUserResponse> {
     public HttpMethod getHttpMethod() {
         return HttpMethod.POST;
     }
+
+    @Override
+    public boolean isOldSign() {
+        return true;
+    }
 }

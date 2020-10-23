@@ -4,6 +4,7 @@ import com.chanjet.openapi.sdk.java.common.ChanjetConstants;
 import com.chanjet.openapi.sdk.java.enums.HttpMethod;
 import com.chanjet.openapi.sdk.java.exception.ChanjetApiException;
 import com.chanjet.openapi.sdk.java.utils.SignUtils;
+import com.chanjet.openapi.sdk.java.utils.OldSignUtils;
 import com.google.gson.Gson;
 import org.apache.commons.lang3.StringUtils;
 
@@ -51,7 +52,13 @@ public class DefaultChanjetClient extends AbstractChanjetClient {
             }
             String timestamp = String.valueOf(System.currentTimeMillis());
             try {
-                String signature = SignUtils.sign(body, request.getAppKey(), signKey, timestamp);
+                String signature;
+                if (request.isOldSign()) {
+                    signature = OldSignUtils.sign(body, request.getAppKey(), signKey, timestamp);
+                } else {
+                    signature = SignUtils.sign(body, request.getAppKey(), signKey, timestamp);
+                }
+
                 request.addHeader(ChanjetConstants.SIGN_KEY, signature);
                 request.addHeader(ChanjetConstants.TIMESTAMP_KEY, timestamp);
             } catch (Exception e) {

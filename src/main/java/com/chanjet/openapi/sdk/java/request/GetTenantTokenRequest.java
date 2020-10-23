@@ -20,4 +20,9 @@ public class GetTenantTokenRequest extends AbstractChanjetRequest<GetTenantToken
     public HttpMethod getHttpMethod() {
         return HttpMethod.POST;
     }
+
+    @Override
+    public boolean isOldSign() {
+        return true;
+    }
 }

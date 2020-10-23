@@ -20,4 +20,9 @@ public class GetUserTokenRequest extends AbstractChanjetRequest<GetUserTokenResp
     public HttpMethod getHttpMethod() {
         return HttpMethod.POST;
     }
+
+    @Override
+    public boolean isOldSign() {
+        return true;
+    }
 }
