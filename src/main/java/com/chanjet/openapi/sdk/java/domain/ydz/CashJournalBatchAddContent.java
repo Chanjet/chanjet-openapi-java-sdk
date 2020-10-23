@@ -1,7 +1,6 @@
 package com.chanjet.openapi.sdk.java.domain.ydz;
 
 import com.chanjet.openapi.sdk.java.ChanjetContent;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -15,7 +14,6 @@ import java.util.ArrayList;
  * @create 2020/10/10 11:18 上午
  **/
 @EqualsAndHashCode(callSuper = true)
-@Builder
 @Data
 public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddContent.Param> implements ChanjetContent {
     private static final long serialVersionUID = 1L;
