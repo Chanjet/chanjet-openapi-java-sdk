@@ -107,9 +107,4 @@ public abstract class AbstractChanjetRequest<T extends ChanjetResponse> implemen
     public ChanjetContent getBizContent() {
         return this.bizContent;
     }
-
-    @Override
-    public boolean isOldSign() {
-        return false;
-    }
 }

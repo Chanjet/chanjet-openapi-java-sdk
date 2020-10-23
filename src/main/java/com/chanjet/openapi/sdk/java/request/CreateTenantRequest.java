@@ -20,9 +20,4 @@ public class CreateTenantRequest extends AbstractChanjetRequest<CreateTenantResp
     public HttpMethod getHttpMethod() {
         return HttpMethod.POST;
     }
-
-    @Override
-    public boolean isOldSign() {
-        return true;
-    }
 }

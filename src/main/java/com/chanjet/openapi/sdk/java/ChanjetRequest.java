@@ -101,11 +101,4 @@ public interface ChanjetRequest<T extends ChanjetResponse> {
     void setContentType(String contentType);
 
     String getAppKey();
-
-    /**
-     * 是否使用老的加签方式
-     *
-     * @return
-     */
-    boolean isOldSign();
 }
