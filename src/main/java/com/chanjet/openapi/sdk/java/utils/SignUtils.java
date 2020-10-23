@@ -29,7 +29,7 @@ public class SignUtils {
         if (StringUtils.isNotBlank(msg)) {
             Object object = new Gson().fromJson(msg, Object.class);
             if (object instanceof List) {
-                map.put("bizContent", msg);
+                map.put("bizContent", msg.replaceAll("\\s*",""));
             } else {
                 if (StringUtils.isNotBlank(msg)) {
                     map = new Gson().fromJson(msg, Map.class);
