@@ -53,6 +53,15 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
          */
         private Integer sequenceNum;
 
+        /**
+         * 外部单号
+         */
+        private String externalCode;
+        /**
+         * 财务账号
+         */
+        private String finAccountNo;
+
         public Long getGlAccountId() {
             return glAccountId;
         }
@@ -117,6 +126,22 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
             this.sequenceNum = sequenceNum;
         }
 
+        public String getExternalCode() {
+            return externalCode;
+        }
+
+        public void setExternalCode(String externalCode) {
+            this.externalCode = externalCode;
+        }
+
+        public String getFinAccountNo() {
+            return finAccountNo;
+        }
+
+        public void setFinAccountNo(String finAccountNo) {
+            this.finAccountNo = finAccountNo;
+        }
+
         @Override
         public String toString() {
             return "Param{" +
@@ -128,6 +153,8 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
                     ", disbursementAmount=" + disbursementAmount +
                     ", couterpartyAccountName='" + couterpartyAccountName + '\'' +
                     ", sequenceNum=" + sequenceNum +
+                    ", externalCode='" + externalCode + '\'' +
+                    ", finAccountNo='" + finAccountNo + '\'' +
                     '}';
         }
     }

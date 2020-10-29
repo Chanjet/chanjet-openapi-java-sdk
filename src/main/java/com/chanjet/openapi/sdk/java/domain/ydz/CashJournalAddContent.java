@@ -49,4 +49,12 @@ public class CashJournalAddContent extends AbstractChanjetContent {
      * 顺序号
      */
     private Integer sequenceNum;
+    /**
+     * 外部单号
+     */
+    private String externalCode;
+    /**
+     * 财务账号
+     */
+    private String finAccountNo;
 }

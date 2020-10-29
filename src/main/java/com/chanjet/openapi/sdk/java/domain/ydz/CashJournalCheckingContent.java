@@ -41,5 +41,13 @@ public class CashJournalCheckingContent extends AbstractChanjetContent {
      * 科目ID
      */
     private String glAccountId;
+    /**
+     * 外部单号
+     */
+    private String externalCode;
+    /**
+     * 财务账号
+     */
+    private String finAccountNo;
 
 }
