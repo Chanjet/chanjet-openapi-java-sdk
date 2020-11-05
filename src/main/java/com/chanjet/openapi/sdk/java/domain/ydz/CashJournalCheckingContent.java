@@ -36,7 +36,7 @@ public class CashJournalCheckingContent extends AbstractChanjetContent {
     /**
      * 余额
      */
-    private BigDecimal balance;
+    private BigDecimal balanceAmount;
     /**
      * 科目ID
      */
