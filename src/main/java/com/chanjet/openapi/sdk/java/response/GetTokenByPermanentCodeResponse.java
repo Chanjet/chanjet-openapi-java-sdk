@@ -2,21 +2,15 @@ package com.chanjet.openapi.sdk.java.response;
 
 import com.chanjet.openapi.sdk.java.AbstractChanjetResponse;
 import com.google.gson.annotations.SerializedName;
-import lombok.*;
+import lombok.Data;
 
 /**
- * 应用入驻模式，获取token响应
- *
- * @author zsc
- * @create 2020/9/8 2:17 下午
+ * @author: zsc
+ * @create: 2020/11/5 3:55 下午
  **/
-@EqualsAndHashCode(callSuper = true)
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 @Data
-public class GetTokenResponse extends AbstractChanjetResponse {
-    private static final long serialVersionUID = -5635542185154657744L;
+public class GetTokenByPermanentCodeResponse extends AbstractChanjetResponse {
+    private static final long serialVersionUID = 3545973292845315394L;
     /**
      * 错误码，200为成功，其余均为失败，详情参考开放平台接口错误码类表
      */
@@ -28,7 +22,7 @@ public class GetTokenResponse extends AbstractChanjetResponse {
     /**
      * 响应结果
      */
-    private GetTokenResponse.Result result;
+    private Result result;
 
     @Data
     public static class Result {

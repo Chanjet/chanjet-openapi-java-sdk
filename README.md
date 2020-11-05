@@ -13,7 +13,7 @@
 <dependency>
     <groupId>com.chanjet</groupId>
     <artifactId>chanjet-openapi-java-sdk</artifactId>
-    <version>1.0.6-RELEASE</version>
+    <version>1.0.8-RELEASE</version>
 </dependency>
 ```
 ## 快速使用
