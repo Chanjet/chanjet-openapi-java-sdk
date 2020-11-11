@@ -12,11 +12,6 @@ import java.util.List;
  * @author: zsc
  * @create: 2020/11/11 1:02 下午
  **/
-@EqualsAndHashCode(callSuper = true)
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@Data
 public class FindByEnterpriseIdResponse extends ArrayList<FindByEnterpriseIdResponse.Param> implements ChanjetResponse {
 
     public static class Param {
