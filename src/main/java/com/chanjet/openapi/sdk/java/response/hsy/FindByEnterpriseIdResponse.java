@@ -1,10 +1,8 @@
 package com.chanjet.openapi.sdk.java.response.hsy;
 
 import com.chanjet.openapi.sdk.java.ChanjetResponse;
-import lombok.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 获取好生意账套列表响应
@@ -22,7 +20,7 @@ public class FindByEnterpriseIdResponse extends ArrayList<FindByEnterpriseIdResp
         /**
          * 账套列表
          */
-        private List<Tenant> tenant;
+        private Tenant tenant;
 
         public Boolean getDefault() {
             return isDefault;
@@ -32,11 +30,11 @@ public class FindByEnterpriseIdResponse extends ArrayList<FindByEnterpriseIdResp
             isDefault = aDefault;
         }
 
-        public List<Tenant> getTenant() {
+        public Tenant getTenant() {
             return tenant;
         }
 
-        public void setTenant(List<Tenant> tenant) {
+        public void setTenant(Tenant tenant) {
             this.tenant = tenant;
         }
 
