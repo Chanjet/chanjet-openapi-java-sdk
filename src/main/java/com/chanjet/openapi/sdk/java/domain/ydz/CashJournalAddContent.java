@@ -57,4 +57,8 @@ public class CashJournalAddContent extends AbstractChanjetContent {
      * 财务账号
      */
     private String finAccountNo;
+    /**
+     * 备注
+     */
+    private String remark;
 }

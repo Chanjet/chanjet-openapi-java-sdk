@@ -61,6 +61,10 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
          * 财务账号
          */
         private String finAccountNo;
+        /**
+         * 备注
+         */
+        private String remark;
 
         public Long getGlAccountId() {
             return glAccountId;
@@ -142,6 +146,14 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
             this.finAccountNo = finAccountNo;
         }
 
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
         @Override
         public String toString() {
             return "Param{" +
@@ -155,6 +167,7 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
                     ", sequenceNum=" + sequenceNum +
                     ", externalCode='" + externalCode + '\'' +
                     ", finAccountNo='" + finAccountNo + '\'' +
+                    ", remark='" + remark + '\'' +
                     '}';
         }
     }
