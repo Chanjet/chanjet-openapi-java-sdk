@@ -8,10 +8,21 @@ import com.chanjet.openapi.sdk.java.exception.ChanjetApiException;
  **/
 public interface ChanjetClient {
     /**
+     * 执行调用，返回json序列化后的对象
+     *
      * @param <T>
      * @param request
      * @return
      * @throws ChanjetApiException
      */
     <T extends ChanjetResponse> T execute(ChanjetRequest<T> request) throws ChanjetApiException;
+
+    /**
+     * 指定调用，返回HttpResponse
+     *
+     * @param request
+     * @return
+     * @throws ChanjetApiException
+     */
+    HttpResponse doExecute(ChanjetRequest<ChanjetResponse> request) throws ChanjetApiException;
 }
