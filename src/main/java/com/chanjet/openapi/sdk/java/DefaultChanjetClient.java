@@ -42,7 +42,7 @@ public class DefaultChanjetClient extends AbstractChanjetClient {
     }
 
     @Override
-    void sign(ChanjetRequest request, String signKey) throws ChanjetApiException {
+    public void sign(ChanjetRequest request, String signKey) throws ChanjetApiException {
         HttpMethod httpMethod = request.getHttpMethod();
         if (StringUtils.isNotBlank(signKey)) {
             String body = null;

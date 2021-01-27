@@ -74,7 +74,7 @@ public abstract class AbstractChanjetClient implements ChanjetClient {
         }
     }
 
-    private <T extends ChanjetResponse> HttpResponse invoke(ChanjetRequest<T> request) throws ChanjetApiException {
+    public  <T extends ChanjetResponse> HttpResponse invoke(ChanjetRequest<T> request) throws ChanjetApiException {
         HttpResponse httpResponse;
         try {
             ChanjetLogger.logBizCommonParam(request.getAppKey());
@@ -105,26 +105,26 @@ public abstract class AbstractChanjetClient implements ChanjetClient {
         return httpResponse;
     }
 
-    private <T extends ChanjetResponse> HttpResponse doPost(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
+    public  <T extends ChanjetResponse> HttpResponse doPost(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
         sign(request,signKey);
         String body = new Gson().toJson(request.getBizContent());
         return HttpUtils.doPost(this.serverUrl + request.getRequestUri(), request.getHeaders(),
                 request.getQueryParams(), request.getContentType(), body, this.connectTimeout, this.readTimeout, null, 0);
     }
 
-    private <T extends ChanjetResponse> HttpResponse doGet(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
+    public <T extends ChanjetResponse> HttpResponse doGet(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
         sign(request,signKey);
         return HttpUtils.doGet(this.serverUrl + request.getRequestUri(), request.getHeaders(),
                 request.getQueryParams(), request.getContentType(), this.connectTimeout, this.readTimeout);
     }
 
-    private <T extends ChanjetResponse> HttpResponse doDelete(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
+    public <T extends ChanjetResponse> HttpResponse doDelete(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
         sign(request,signKey);
         return HttpUtils.doDelete(this.serverUrl + request.getRequestUri(), request.getHeaders(),
                 request.getQueryParams(), request.getContentType(), this.connectTimeout, this.readTimeout);
     }
 
-    private <T extends ChanjetResponse> HttpResponse doPut(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
+    public <T extends ChanjetResponse> HttpResponse doPut(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
         sign(request,signKey);
         String body = new Gson().toJson(request.getBizContent());
         return HttpUtils.doPut(this.serverUrl + request.getRequestUri(), request.getHeaders(),

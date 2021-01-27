@@ -1,3 +1,6 @@
+2021-01-27 Version: 1.0.12
+1、将AbstractChanjetClient的方法改为public属性，方便扩展
+
 2020-11-11 Version: 1.0.11
 1、易代账新增日记账和批量新增日记账增加备注字段
 
