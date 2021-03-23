@@ -41,7 +41,7 @@ public class HttpUtils {
     /**
      * 是否校验SSL服务端证书，默认为需要校验
      */
-    private static volatile boolean needCheckServerTrusted = true;
+    private static volatile boolean needCheckServerTrusted = false;
 
     private HttpUtils() {
     }

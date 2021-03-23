@@ -1,3 +1,6 @@
+2021-03-23 Version: 1.0.13
+1、默认将http ssl校验关闭
+
 2021-01-27 Version: 1.0.12
 1、将AbstractChanjetClient的方法改为public属性，方便扩展
 
