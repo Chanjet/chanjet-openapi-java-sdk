@@ -61,4 +61,9 @@ public class CashJournalAddContent extends AbstractChanjetContent {
      * 备注
      */
     private String remark;
+
+    /**
+     * 收支类型名称
+     */
+    private String incomeDisbursementName;
 }

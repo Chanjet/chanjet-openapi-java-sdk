@@ -65,6 +65,10 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
          * 备注
          */
         private String remark;
+        /**
+         * 收支类型名称
+         */
+        private String incomeDisbursementName;
 
         public Long getGlAccountId() {
             return glAccountId;
@@ -154,6 +158,14 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
             this.remark = remark;
         }
 
+        public String getIncomeDisbursementName() {
+            return incomeDisbursementName;
+        }
+
+        public void setIncomeDisbursementName(String incomeDisbursementName) {
+            this.incomeDisbursementName = incomeDisbursementName;
+        }
+
         @Override
         public String toString() {
             return "Param{" +
@@ -168,6 +180,7 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
                     ", externalCode='" + externalCode + '\'' +
                     ", finAccountNo='" + finAccountNo + '\'' +
                     ", remark='" + remark + '\'' +
+                    ", incomeDisbursementName='" + incomeDisbursementName + '\'' +
                     '}';
         }
     }
