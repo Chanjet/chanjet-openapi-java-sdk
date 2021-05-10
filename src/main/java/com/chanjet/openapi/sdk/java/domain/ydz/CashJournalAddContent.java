@@ -66,4 +66,8 @@ public class CashJournalAddContent extends AbstractChanjetContent {
      * 收支类型名称
      */
     private String incomeDisbursementName;
+    /**
+     * 电子回单url
+     */
+    private String digitalReceiptUrl;
 }

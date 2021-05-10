@@ -69,6 +69,10 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
          * 收支类型名称
          */
         private String incomeDisbursementName;
+        /**
+         * 电子回单url
+         */
+        private String digitalReceiptUrl;
 
         public Long getGlAccountId() {
             return glAccountId;
@@ -166,6 +170,14 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
             this.incomeDisbursementName = incomeDisbursementName;
         }
 
+        public String getDigitalReceiptUrl() {
+            return digitalReceiptUrl;
+        }
+
+        public void setDigitalReceiptUrl(String digitalReceiptUrl) {
+            this.digitalReceiptUrl = digitalReceiptUrl;
+        }
+
         @Override
         public String toString() {
             return "Param{" +
@@ -181,6 +193,7 @@ public class CashJournalBatchAddContent extends ArrayList<CashJournalBatchAddCon
                     ", finAccountNo='" + finAccountNo + '\'' +
                     ", remark='" + remark + '\'' +
                     ", incomeDisbursementName='" + incomeDisbursementName + '\'' +
+                    ", digitalReceiptUrl='" + digitalReceiptUrl + '\'' +
                     '}';
         }
     }
