@@ -39,7 +39,7 @@ public class HttpUtils {
     private static int keepAliveTimeout = 0;
 
     /**
-     * 是否校验SSL服务端证书，默认为需要校验
+     * 是否校验SSL服务端证书，默认为不需要校验
      */
     private static volatile boolean needCheckServerTrusted = false;
 
@@ -64,8 +64,6 @@ public class HttpUtils {
      * <p>
      * 连接并非一定能保持指定的KeepAlive超时时长，比如服务端断开了连接
      * <p>
-     * 注：该方法目前只在JDK8上测试有效
-     *
      * @param timeout KeepAlive超时时间，单位秒
      */
     public static void setKeepAliveTimeout(int timeout) {
