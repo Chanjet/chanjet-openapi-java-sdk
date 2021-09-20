@@ -132,9 +132,10 @@ public abstract class AbstractChanjetClient implements ChanjetClient {
     public <T extends ChanjetResponse> HttpResponse invoke(ChanjetRequest<T> request) throws ChanjetApiException {
         HttpResponse httpResponse;
         try {
+            Map<String, String> headers = buildHeaders(request.getHeaders());
             ChanjetLogger.logBizCommonParam(request.getAppKey());
             ChanjetLogger.logHttpRequest(request.getHttpMethod().name(), serverUrl + request.getRequestUri(),
-                    request.getQueryParams(), request.getHeaders(), new Gson().toJson(request.getBizContent()));
+                    request.getQueryParams(), headers, new Gson().toJson(request.getBizContent()));
             switch (request.getHttpMethod()) {
                 case GET:
                     httpResponse = doGet(request);
@@ -171,7 +172,7 @@ public abstract class AbstractChanjetClient implements ChanjetClient {
     public <T extends ChanjetResponse> HttpResponse doGet(ChanjetRequest<T> request) throws IOException, ChanjetApiException {
         sign(request);
         Map<String, String> headers = buildHeaders(request.getHeaders());
-        return HttpUtils.doGet(this.serverUrl + request.getRequestUri(), request.getHeaders(),
+        return HttpUtils.doGet(this.serverUrl + request.getRequestUri(), headers,
                 request.getQueryParams(), request.getContentType(), this.connectTimeout, this.readTimeout);
     }
 
