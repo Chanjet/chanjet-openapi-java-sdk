@@ -7,16 +7,18 @@
 
 2. 使用 Chanjet Open SDK for Java 之前 ，您需要先前往[畅捷通-开发者中心](https://dev.chanjet.com)完成开发者接入的一些准备工作，包括创建应用、获取应用的appKey和appSecret。
 
-## 安装依赖
+## 快速使用
+### 原生java使用
+### 安装依赖
 推荐通过Maven来管理项目依赖，您只需在项目的`pom.xml`文件中声明如下依赖
 ```xml
 <dependency>
     <groupId>com.chanjet</groupId>
-    <artifactId>chanjet-openapi-java-sdk</artifactId>
-    <version>1.0.13-RELEASE</version>
+    <artifactId>java-sdk-common</artifactId>
+    <version>1.0.15-RELEASE</version>
 </dependency>
 ```
-## 快速使用
+### 代码示例
 ```java
 import com.chanjet.openapi.sdk.java.domain.CreateTenantContent;
 import com.chanjet.openapi.sdk.java.exception.ChanjetApiException;
@@ -27,15 +29,10 @@ public class SdkTest {
     public static void main(String[] args) {
         try {
             //创建client
-            DefaultChanjetClient defaultChanjetClient = new DefaultChanjetClient("https://openapi.chanjet.com");
+            DefaultChanjetClient defaultChanjetClient = new DefaultChanjetClient("https://openapi.chanjet.com","zMqBZ...","5DB7FB61... ...");
 
             //创建请求对象
             CreateTenantRequest createTenantRequest = new CreateTenantRequest();
-
-            //设置开放平台公共请求参数
-            createTenantRequest.setAppKey("zMqBZ...");
-            createTenantRequest.setAppSecret("5DB7FB61... ...");
-            createTenantRequest.setRequestUri("/financial/orgAndUser/createTenant");
             
             //设置header参数,接口如无appKey、appSecret、appSecret、Content-Type四个参数之外的请求头，则不需要传
             createTenantRequest.addHeader("key", "value");
@@ -59,6 +56,68 @@ public class SdkTest {
             System.out.println("调用遭遇异常，原因：" + e.getMessage());
             throw new RuntimeException(e.getMessage(), e);
         }
+    }
+}
+```
+
+### spring-boot项目使用
+### 安装依赖
+推荐通过Maven来管理项目依赖，您只需在项目的`pom.xml`文件中声明如下依赖
+```xml
+<dependency>
+    <groupId>com.chanjet</groupId>
+    <artifactId>java-sdk-spring-starter</artifactId>
+    <version>1.0.15-RELEASE</version>
+</dependency>
+```
+
+### 配置文件
+```yaml
+chanjet:
+  client:
+    serverUrl: https://inte-openapi.chanjet.com
+    appKey: hdxt...
+    appSecret: 10FBDBD5C3... ...
+```
+
+### 代码示例
+```java
+import com.chanjet.openapi.sdk.java.ChanjetClient;
+import com.chanjet.openapi.sdk.java.domain.CreateTenantContent;
+import com.chanjet.openapi.sdk.java.exception.ChanjetApiException;
+import com.chanjet.openapi.sdk.java.request.CreateTenantRequest;
+import com.chanjet.openapi.sdk.java.response.CreateTenantResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.UUID;
+
+/**
+ * @author: zsc
+ * @create: 2021/9/20 9:31 下午
+ **/
+@RequestMapping("test")
+@RestController
+public class TestController {
+    @Autowired
+    private ChanjetClient chanjetClient;
+
+    /**
+     * 创建租户
+     *
+     * @return
+     */
+    @GetMapping("createTenant")
+    public CreateTenantResponse createTenant() throws ChanjetApiException {
+        //创建租户
+        CreateTenantRequest createTenantRequest = new CreateTenantRequest();
+        CreateTenantContent createTenantContent = new CreateTenantContent();
+        createTenantContent.setTenantId(UUID.randomUUID().toString());
+        createTenantRequest.setBizContent(createTenantContent);
+        CreateTenantResponse createTenantResponse = chanjetClient.execute(createTenantRequest);
+        return createTenantResponse;
     }
 }
 ```

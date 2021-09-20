@@ -1,0 +1,32 @@
+{
+  "properties": [
+    {
+      "name": "chanjet.client.serverUrl",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "chanjet.client.appKey",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "chanjet.client.appSecret",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "chanjet.client.connectTimeout",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "chanjet.client.readTimeout",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "chanjet.client.signKey",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "chanjet.client.keepAliveTimeout",
+      "type": "java.lang.Integer"
+    }
+  ]
+}

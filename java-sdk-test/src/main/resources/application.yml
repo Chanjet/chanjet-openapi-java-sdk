@@ -1,0 +1,7 @@
+server:
+  port: 7777
+chanjet:
+  client:
+    serverUrl: https://inte-openapi.chanjet.com
+    appKey: hdxtXDas
+    appSecret: 10FBDBD5C316ABD58E29BC488B723C91

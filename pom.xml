@@ -6,7 +6,13 @@
 
     <groupId>com.chanjet</groupId>
     <artifactId>chanjet-openapi-java-sdk</artifactId>
-    <version>1.0.15-RELEASE</version>
+    <packaging>pom</packaging>
+    <version>1.1.0-RELEASE</version>
+    <modules>
+        <module>java-sdk-common</module>
+        <module>java-sdk-spring-starter</module>
+        <module>java-sdk-test</module>
+    </modules>
     <name>chanjet-openapi-java-sdk</name>
     <url>https://dev.chanjet.com</url>
     <description>
@@ -21,39 +27,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
     </properties>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>sonatype-oss-snapshot</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>sonatype-oss-release</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
-        </license>
-    </licenses>
-
-    <scm>
-        <connection>scm:git:git@github.com:Chanjet/chanjet-openapi-java-sdk.git</connection>
-        <developerConnection>scm:git:ssh://github.com:Chanjet/chanjet-openapi-java-sdk.git</developerConnection>
-        <url>https://github.com/Chanjet/chanjet-openapi-java-sdk/tree/master</url>
-    </scm>
-
-    <developers>
-        <developer>
-            <id>chanjet</id>
-            <name>chanjetsdp</name>
-            <email>chanjetsdp@chanjet.com</email>
-        </developer>
-    </developers>
 
     <dependencies>
         <dependency>
@@ -104,6 +79,49 @@
 
     </dependencies>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-oss-snapshot</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-oss-release</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:Chanjet/chanjet-openapi-java-sdk.git</connection>
+        <developerConnection>scm:git:ssh://github.com:Chanjet/chanjet-openapi-java-sdk.git</developerConnection>
+        <url>https://github.com/Chanjet/chanjet-openapi-java-sdk/tree/master</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>chanjet</id>
+            <name>chanjetsdp</name>
+            <email>chanjetsdp@chanjet.com</email>
+        </developer>
+    </developers>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
         <plugins>
             <plugin>
