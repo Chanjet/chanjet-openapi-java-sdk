@@ -7,8 +7,6 @@ import com.chanjet.openapi.sdk.java.exception.ChanjetApiException;
  * @create 2020/7/31 1:15 下午
  **/
 public interface ChanjetClient {
-    public static final String APP_KEY = "appKey";
-    public static final String APP_SECRET = "appSecret";
     /**
      * 执行调用，返回json序列化后的对象
      *

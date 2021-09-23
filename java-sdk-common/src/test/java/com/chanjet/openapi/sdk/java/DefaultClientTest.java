@@ -31,7 +31,7 @@ public class DefaultClientTest {
 
     @BeforeClass
     public static void init() {
-        chanjetClient = new DefaultChanjetClient("https://inte-openapi.chanjet.com", APP_KEY, APP_SECRET);
+        chanjetClient = new DefaultChanjetClient("https://openapi.inte.chanjet.com", APP_KEY, APP_SECRET);
         tenantId = UUID.randomUUID().toString();
     }
 

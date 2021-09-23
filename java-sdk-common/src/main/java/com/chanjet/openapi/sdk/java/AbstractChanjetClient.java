@@ -15,6 +15,8 @@ import java.util.Map;
  * @create 2020/7/31 1:24 下午
  **/
 public abstract class AbstractChanjetClient implements ChanjetClient {
+    protected static final String APP_KEY = "appKey";
+    protected static final String APP_SECRET = "appSecret";
     /**
      * 链接超时的默认时间，单位ms
      */
