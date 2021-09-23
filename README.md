@@ -1,21 +1,21 @@
-# chanjet-open-sdk
+# chanjet-openapi-java-sdk
 
-欢迎使用 Chanjet Open SDK for Java 。
+欢迎使用 Chanjet OpenApi SDK for Java 。
 
 ## 环境要求
-1. Chanjet Open SDK for Java 需要配合`JKD 1.6`或其以上版本。
-
-2. 使用 Chanjet Open SDK for Java 之前 ，您需要先前往[畅捷通-开发者中心](https://dev.chanjet.com)完成开发者接入的一些准备工作，包括创建应用、获取应用的appKey和appSecret。
+1. 使用 Chanjet OpenApi SDK for Java 之前 ，您需要先前往[畅捷通-开发者中心](https://dev.chanjet.com)完成开发者接入的一些准备工作，包括创建应用、获取应用的appKey和appSecret。
 
 ## 快速使用
-### 原生java使用
+### 原生java项目使用
+1. Chanjet OpenApi SDK for Java 需要配合`JKD 1.6`或其以上版本。
+
 ### 安装依赖
 推荐通过Maven来管理项目依赖，您只需在项目的`pom.xml`文件中声明如下依赖
 ```xml
 <dependency>
     <groupId>com.chanjet</groupId>
     <artifactId>java-sdk-common</artifactId>
-    <version>1.0.15-RELEASE</version>
+    <version>1.1.0-RELEASE</version>
 </dependency>
 ```
 ### 代码示例
@@ -61,13 +61,15 @@ public class SdkTest {
 ```
 
 ### spring-boot项目使用
+1. 需要配合`JKD 1.8`或其以上版本。
+
 ### 安装依赖
 推荐通过Maven来管理项目依赖，您只需在项目的`pom.xml`文件中声明如下依赖
 ```xml
 <dependency>
     <groupId>com.chanjet</groupId>
     <artifactId>java-sdk-spring-starter</artifactId>
-    <version>1.0.15-RELEASE</version>
+    <version>1.1.0-RELEASE</version>
 </dependency>
 ```
 
